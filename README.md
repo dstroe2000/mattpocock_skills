@@ -8,7 +8,16 @@ The original repository distributes skills individually via `npx skills@latest a
 
 Claude Code supports a **plugin system** that bundles multiple skills under a single package — install once, update once, namespaced together. This fork adds the `.claude-plugin/` packaging so the entire collection can be installed as one plugin.
 
-### Install as a plugin
+### Option 1: Install via plugin commands (recommended)
+
+In Claude Code, run:
+
+```
+/plugin marketplace add dstroe2000/mattpocock_skills
+/plugin install mattpocock@mattpocock-skills
+```
+
+### Option 2: Install via settings.json
 
 Add this to your `~/.claude/settings.json`:
 
@@ -28,11 +37,21 @@ Add this to your `~/.claude/settings.json`:
 }
 ```
 
-Then restart Claude Code. All 19 skills will be available as `mattpocock:<skill-name>`.
+Then restart Claude Code.
 
-### Install individual skills (original method)
+### Option 3: Install via npx
 
-You can still install skills one by one using the original approach from the upstream repo.
+```
+npx skills add git@github.com:dstroe2000/mattpocock_skills.git
+```
+
+### Option 4: Install individual skills (original method)
+
+You can still install skills one by one from the upstream repo — see the listings below.
+
+---
+
+After installation, all 19 skills will be available as `mattpocock:<skill-name>` (e.g. `/mattpocock:tdd`, `/mattpocock:grill-me`).
 
 ---
 
