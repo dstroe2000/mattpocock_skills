@@ -39,13 +39,22 @@ Add this to your `~/.claude/settings.json`:
 
 Then restart Claude Code.
 
-### Option 3: Install via npx
+### Option 3: Manual install (clone and copy)
+
+```bash
+git clone https://github.com/dstroe2000/mattpocock_skills.git
+cp -r mattpocock_skills/skills/* ~/.claude/skills/
+```
+
+Claude Code automatically discovers any `SKILL.md` files in `~/.claude/skills/`. No plugin config needed.
+
+### Option 4: Install via npx
 
 ```
 npx skills add git@github.com:dstroe2000/mattpocock_skills.git
 ```
 
-### Option 4: Install individual skills (original method)
+### Option 5: Install individual skills (original method)
 
 You can still install skills one by one from the upstream repo — see the listings below.
 
