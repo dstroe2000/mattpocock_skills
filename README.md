@@ -1,25 +1,42 @@
 # Agent Skills (Plugin Edition)
 
-> **Fork of [mattpocock/skills](https://github.com/mattpocock/skills)** by [Matt Pocock](https://github.com/mattpocock). All skills, descriptions, and content are his original work. This fork only repackages them as a Claude Code plugin.
+> **Fork of [mattpocock/skills](https://github.com/mattpocock/skills)** by [Matt Pocock](https://github.com/mattpocock). All skills, descriptions, and content are his original work. This fork only repackages them as a Claude Code plugin — no skill content has been modified.
+>
+> **If Matt Pocock publishes an official plugin package, switch to that instead.** This fork is a stopgap until the upstream repo adopts plugin packaging.
 
 ## Why this fork?
 
-The original repository distributes skills individually via `npx skills@latest add`. That works well for cherry-picking, but there is no way to install all skills at once. If you want the full collection, you need to run `npx` 19 times.
+The original repository distributes skills individually via `npx skills@latest add`. That works well for cherry-picking, but there is no way to install all 19 skills at once.
 
-Claude Code supports a **plugin system** that bundles multiple skills under a single package — install once, update once, namespaced together. This fork adds the `.claude-plugin/` packaging so the entire collection can be installed as one plugin.
+This fork reorganizes the directory structure so the entire collection can be installed in one step — either by copying files directly, or via Claude Code's plugin system.
 
-### Option 1: Install via plugin commands (recommended)
+## Installation
 
-In Claude Code, run:
+### Option 1: Clone and copy (simplest)
+
+```bash
+git clone https://github.com/dstroe2000/mattpocock_skills.git
+cp -r mattpocock_skills/skills/* ~/.claude/skills/
+```
+
+Claude Code automatically discovers any `SKILL.md` files in `~/.claude/skills/`. No config needed, no dependencies beyond git.
+
+### Option 2: Install individual skills from upstream (original method)
+
+Install only the skills you want, directly from [Matt Pocock's repo](https://github.com/mattpocock/skills) — see the listings below.
+
+### Option 3: Plugin system (experimental)
+
+The Claude Code plugin system is still young but allows bundled install, update, and namespacing. Use this if you prefer managed plugins over manual file copying.
+
+**Via plugin commands:**
 
 ```
 /plugin marketplace add dstroe2000/mattpocock_skills
 /plugin install mattpocock@mattpocock-skills
 ```
 
-### Option 2: Install via settings.json
-
-Add this to your `~/.claude/settings.json`:
+**Or manually in `~/.claude/settings.json`:**
 
 ```json
 {
@@ -37,36 +54,13 @@ Add this to your `~/.claude/settings.json`:
 }
 ```
 
-Then restart Claude Code.
-
-### Option 3: Manual install (clone and copy)
-
-```bash
-git clone https://github.com/dstroe2000/mattpocock_skills.git
-cp -r mattpocock_skills/skills/* ~/.claude/skills/
-```
-
-Claude Code automatically discovers any `SKILL.md` files in `~/.claude/skills/`. No plugin config needed.
-
-### Option 4: Install via npx
-
-```
-npx skills add git@github.com:dstroe2000/mattpocock_skills.git
-```
-
-### Option 5: Install individual skills (original method)
-
-You can still install skills one by one from the upstream repo — see the listings below.
-
----
-
-After installation, all 19 skills will be available as `mattpocock:<skill-name>` (e.g. `/mattpocock:tdd`, `/mattpocock:grill-me`).
+Then restart Claude Code. Skills will be available as `mattpocock:<skill-name>`.
 
 ---
 
 ## Credits
 
-All skills below were created by **[Matt Pocock](https://github.com/mattpocock)**. This fork exists solely to provide plugin packaging and does not modify any skill content.
+All skills below were created by **[Matt Pocock](https://github.com/mattpocock)**. This fork exists solely to provide a bulk installation method and does not modify any skill content.
 
 ---
 
