@@ -1,0 +1,20 @@
+{
+  "name": "mattpocock",
+  "version": "1.0.0",
+  "description": "Matt Pocock's agent skills collection — planning, development, tooling, and writing skills for Claude Code.",
+  "author": {
+    "name": "Matt Pocock",
+    "url": "https://github.com/mattpocock"
+  },
+  "repository": "https://github.com/dstroe2000/mattpocock_skills",
+  "license": "MIT",
+  "keywords": [
+    "tdd",
+    "prd",
+    "planning",
+    "refactoring",
+    "code-review",
+    "writing",
+    "skills"
+  ]
+}

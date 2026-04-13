@@ -1,4 +1,46 @@
-# Agent Skills
+# Agent Skills (Plugin Edition)
+
+> **Fork of [mattpocock/skills](https://github.com/mattpocock/skills)** by [Matt Pocock](https://github.com/mattpocock). All skills, descriptions, and content are his original work. This fork only repackages them as a Claude Code plugin.
+
+## Why this fork?
+
+The original repository distributes skills individually via `npx skills@latest add`. That works well for cherry-picking, but there is no way to install all skills at once. If you want the full collection, you need to run `npx` 19 times.
+
+Claude Code supports a **plugin system** that bundles multiple skills under a single package — install once, update once, namespaced together. This fork adds the `.claude-plugin/` packaging so the entire collection can be installed as one plugin.
+
+### Install as a plugin
+
+Add this to your `~/.claude/settings.json`:
+
+```json
+{
+  "enabledPlugins": {
+    "mattpocock@mattpocock-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "mattpocock-skills": {
+      "source": {
+        "source": "github",
+        "repo": "dstroe2000/mattpocock_skills"
+      }
+    }
+  }
+}
+```
+
+Then restart Claude Code. All 19 skills will be available as `mattpocock:<skill-name>`.
+
+### Install individual skills (original method)
+
+You can still install skills one by one using the original approach from the upstream repo.
+
+---
+
+## Credits
+
+All skills below were created by **[Matt Pocock](https://github.com/mattpocock)**. This fork exists solely to provide plugin packaging and does not modify any skill content.
+
+---
 
 A collection of agent skills that extend capabilities across planning, development, and tooling.
 
